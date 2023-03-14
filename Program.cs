@@ -9,9 +9,11 @@
 
         int[] array2 = new int[10];
         
-        //создаём экземпляр нестатичееского класса "Methods" (method - экзкмпляр класса)      
+        //создаём экземпляры нестатического класса "ExtensionMethods" (arrayZ & arrayX - экзкмпляры класса)      
         ArrayMethods arrayZ = new ArrayMethods();
         ArrayMethods arrayX = new ArrayMethods();
+
+        //вызываем метод заполнения массива
         arrayZ.FillArray(array1);
         arrayX.FillArray(array2);
 
@@ -19,7 +21,7 @@
         arrayZ.PrintArray(array1, 1);        
         arrayX.PrintArray(array2, 2);
 
-        //Вызов Extensions
+        //Вызов методаExtensions
         DateTime currentDateTime = DateTime.Now;
         ExtensionsMethods.Print(currentDateTime);
     }
