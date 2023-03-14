@@ -4,28 +4,48 @@
     {
         System.Console.WriteLine("Это программа длы работы с массивами");
 
-        //создаём массив и выделили ему место в памяти с помошью команды "new".
-        int[] array1 = new int[10] {4, 6, 2, 8, 5, 1, 4, 9, 3, 7};
+        //создаём массивы и выделяем им место в памяти с помошью команды "new".
+        int[] array1 = new int[5];
+        int[] array2 = new int[10] {5, 54, 24, 8, 10,33, 9, 12, 91, 6};
+        int[] array3 = new int[15];
 
-        int[] array2 = new int[10];
+        //для обращения к методам текущего статического класса "Program"
+        //не требуется указывать имя класса111
+        FillArray(array1);
+
+                                            //КЛАССЫ!!! КЛАССЫ!!! КЛАССЫ!!!
+        //создаём экземпляр НЕстатического класса "ArrayMethods" (array - экземпляр класса)
+        //При необъодимости можно создать несколько экземпляров
+        ArrayMethods array = new ArrayMethods();
+
+        //НЕСТАТИЧЕСКИЙ КЛАСС!!! НЕСТАТИЧЕСКИЕ МЕТОДЫ!!!
+        //Вызов НЕстатического метода FillArray НЕстатического класса "ArrayMethods"
+        //возможен только от имени экземпляра(array)!!! Только так!!!
+        array.FillArray(array1);
         
-        //создаём экземпляры нестатического класса "ExtensionMethods" (arrayZ & arrayX - экзкмпляры класса)      
-        ArrayMethods arrayZ = new ArrayMethods();
-        ArrayMethods arrayX = new ArrayMethods();
+        //повторение, но с другим НЕстатическим методом.
+        array.PrintArray(array1, 1);
 
-        //вызываем метод заполнения массива
-        arrayZ.FillArray(array1);
-        arrayX.FillArray(array2);
+        //ОСОБОЕ ВНИМАНИЕ!!! ДАЛЕЕ ИДУТ СТАТИЧЕСКИЕ МЕТОДЫ!!!
+        //Вызов статического метода PrintArrayStatic НЕстатического класса "ArrayMethods"
+        //возможен только от имени класса(ArrayMethods). Только так!!!
+        ArrayMethods.PrintArrayStatic(array2, 2);
 
-        //вызываем метод вывода массива в консоль.
-        arrayZ.PrintArray(array1, 1);        
-        arrayX.PrintArray(array2, 2);
+        //для обращения к методам статического класса, экземпляр класса создать НЕВОЗМОЖНО!!!
+        //вызов статического метода FillArrayStatic статического класса "ExtensionsMethods"
+        //возможен только от имени класса(ExtensionsMethods). Только так!!!
+        ExtensionsMethods.FillArrayStatic(array3);
+        
+        //повторение, но с другим статическим методом.
+        ExtensionsMethods.PrintArrayStatic(array3, 3);
 
-        //Вызов методаExtensions
+
+        //это пока не изучаем!!!
+        //Вызов метода Print из классса Extensions
         DateTime currentDateTime = DateTime.Now;
         ExtensionsMethods.Print(currentDateTime);
     }
-    /*
+    
     public static void FillArray(int[] arr)
     {
         int i = 0;
@@ -61,5 +81,5 @@
             i++;
         }
     }
-    */
+    
 }

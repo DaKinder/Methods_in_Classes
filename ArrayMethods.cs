@@ -29,7 +29,19 @@ public class ArrayMethods
 
     {
         int i = 0;
-        System.Console.Write("Массив - ");
+        System.Console.Write($"Массив {num} - ");
+        while(i < arr.Length)
+        {
+            Console.Write($"{arr[i]} ");
+            i++;
+        }
+        System.Console.WriteLine();
+    } 
+    public static void PrintArrayStatic(int[] arr, int num)
+    
+    {
+        int i = 0;
+        System.Console.Write($"Массив {num} - ");
         while(i < arr.Length)
         {
             Console.Write($"{arr[i]} ");
