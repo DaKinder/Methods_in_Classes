@@ -21,7 +21,7 @@
 
         //Вызов Extensions
         DateTime currentDateTime = DateTime.Now;
-        Extensions.Print(currentDateTime);
+        ExtensionsMethods.Print(currentDateTime);
     }
     /*
     public static void FillArray(int[] arr)
